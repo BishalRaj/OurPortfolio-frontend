@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { Fragment } from "react";
+import { Switch, BrowserRouter } from "react-router-dom";
+import ProtectedRoute from "./utils/protectedRoute";
+import LoginPage from "./pages/login";
+import RegisterPage from "./pages/register";
+import HomePage from "./pages/home";
+import AdminPage from "./pages/admin";
 function App() {
+  const isLoggedIn = () => {
+    return false;
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Fragment>
+        <Switch>
+          <ProtectedRoute
+            isLoggedIn={isLoggedIn}
+            title={"Our Portfolio"}
+            path={"/"}
+            exact={true}
+            component={LoginPage}
+          />
+          <ProtectedRoute
+            isLoggedIn={isLoggedIn}
+            title={"Register"}
+            path={"/register"}
+            component={RegisterPage}
+          />
+        </Switch>
+      </Fragment>
+    </BrowserRouter>
   );
 }
 
