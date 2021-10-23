@@ -4,16 +4,16 @@ import Card from "@mui/material/Card";
 import { CardContent, Typography } from "@mui/material";
 const Login = () => {
   return (
-    <Container fluid>
-      <Row>
-        <Col lg={4} md={4} sm={4}>
-          <Card>
+    <Container fluid style={{ background: "#fff" }}>
+      <Row className="p-3" style={{ height: "100vh" }}>
+        <Col lg={3} md={3} sm={3}>
+          <Card sx={{ height: "100%" }} className="shadow">
             <CardContent>
               <Typography>Hello</Typography>
             </CardContent>
           </Card>
         </Col>
-        <Col lg={8} md={8} sm={8}>
+        <Col lg={9} md={9} sm={9}>
           form
         </Col>
       </Row>
