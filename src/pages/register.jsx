@@ -4,7 +4,7 @@ import { Form, FormGroup, Input, Label, Button, FormText } from "reactstrap";
 import AuthLayout from "../layout/authLayout";
 
 const Register = () => {
-  return <AuthLayout />;
+  return <> </>;
 };
 
 export default Register;
