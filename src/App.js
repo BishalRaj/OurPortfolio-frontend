@@ -1,5 +1,3 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { Fragment } from "react";
 import { Switch, BrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./utils/protectedRoute";
@@ -27,6 +25,7 @@ function App() {
             isLoggedIn={isLoggedIn}
             title={"Register"}
             path={"/register"}
+            exact={true}
             component={RegisterPage}
           />
         </Switch>
