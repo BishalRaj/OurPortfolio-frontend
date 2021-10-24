@@ -1,10 +1,11 @@
 import React from "react";
 // import { Col, Container, Row } from "reactstrap";
-import { Grid, Card } from "@mui/material";
+import { Grid, Card, Avatar, Typography } from "@mui/material";
 import { Item } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import { Image, Stack } from "react-bootstrap";
 const AuthLayout = ({ img, formComponent, redirectComponent }) => {
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -39,15 +40,47 @@ const AuthLayout = ({ img, formComponent, redirectComponent }) => {
         <Grid item xs={12} md={4}>
           <Card
             sx={{ height: "100%", borderRadius: "2.5%", width: "92%" }}
-            className="shadow"
+            className="shadow "
           >
-            hello
+            <Stack className="h-100 px-3">
+              <Box component="div" sx={{ height: "5%", width: "100%" }}>
+                <Avatar
+                  sx={{ width: 100, height: 100 }}
+                  src="https://image.freepik.com/free-vector/access-control-system-illustration_335657-4640.jpg"
+                />
+              </Box>
+
+              <Box
+                component="div"
+                sx={{ height: "95%" }}
+                className="w-100 d-flex align-items-center justify-content-center"
+              >
+                <Box component="div">
+                  <Typography
+                    variant="h4"
+                    component="div"
+                    sx={{ fontWeight: 700 }}
+                  >
+                    Hi, Welcome back
+                  </Typography>
+                  <Avatar
+                    sx={{ width: 400, height: 400 }}
+                    src="https://image.freepik.com/free-vector/account-concept-illustration_114360-399.jpg"
+                  />
+                </Box>
+              </Box>
+            </Stack>
           </Card>
         </Grid>
+
         <Grid item xs={12} md={8}>
+          <Box component="div" className=" w-100 " sx={{ height: "4%" }}>
+            {redirectComponent}
+          </Box>
           <Box
             component="form"
-            className="h-100 w-100 d-flex align-items-center justify-content-center"
+            className=" w-100 d-flex align-items-center justify-content-center"
+            sx={{ height: "96%" }}
           >
             {formComponent}
           </Box>
