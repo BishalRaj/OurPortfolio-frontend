@@ -1,23 +1,53 @@
+import {
+  FormControl,
+  FormHelperText,
+  InputLabel,
+  Link,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { Box } from "@mui/system";
 import React from "react";
-import { Col, Container, Row } from "reactstrap";
-import Card from "@mui/material/Card";
-import { CardContent, Typography } from "@mui/material";
+
+import AuthLayout from "../layout/authLayout";
+
 const Login = () => {
+  const formComponent = (
+    <Box
+      sx={{ width: "40%" }}
+      component="form"
+      noValidate
+      autoComplete="off"
+      className="p-0"
+    >
+      <TextField
+        sx={{ width: "100%" }}
+        id="outlined-basic"
+        label="Email"
+        variant="outlined"
+      />
+      <TextField
+        sx={{ width: "100%" }}
+        id="outlined-basic"
+        label="Email"
+        variant="outlined"
+      />
+    </Box>
+  );
+
+  const redirectComponent = (
+    <Typography align="right">
+      Don't have an account?{" "}
+      <Link href="/register" underline="none" color="rgb(0, 171, 85)">
+        Get Started
+      </Link>
+    </Typography>
+  );
   return (
-    <Container fluid style={{ background: "#fff" }}>
-      <Row className="p-3" style={{ height: "100vh" }}>
-        <Col lg={3} md={3} sm={3}>
-          <Card sx={{ height: "100%" }} className="shadow">
-            <CardContent>
-              <Typography>Hello</Typography>
-            </CardContent>
-          </Card>
-        </Col>
-        <Col lg={9} md={9} sm={9}>
-          form
-        </Col>
-      </Row>
-    </Container>
+    <AuthLayout
+      formComponent={formComponent}
+      redirectComponent={redirectComponent}
+    />
   );
 };
 

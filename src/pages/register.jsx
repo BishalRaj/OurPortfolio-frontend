@@ -1,23 +1,10 @@
 import React from "react";
-import { Col, Container, Row } from "reactstrap";
-import Card from "@mui/material/Card";
-import { CardContent, Typography } from "@mui/material";
+import { Form, FormGroup, Input, Label, Button, FormText } from "reactstrap";
 
-const Register = () => (
-  <Container fluid style={{ background: "#fff" }}>
-    <Row className="p-3" style={{ height: "100vh" }}>
-      <Col lg={3} md={3} sm={3}>
-        <Card sx={{ height: "100%" }} className="shadow">
-          <CardContent>
-            <Typography>Hello in register</Typography>
-          </CardContent>
-        </Card>
-      </Col>
-      <Col lg={9} md={9} sm={9}>
-        Multistep form here
-      </Col>
-    </Row>
-  </Container>
-);
+import AuthLayout from "../layout/authLayout";
+
+const Register = () => {
+  return <AuthLayout />;
+};
 
 export default Register;
