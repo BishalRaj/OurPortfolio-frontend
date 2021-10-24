@@ -6,6 +6,7 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { Image, Stack } from "react-bootstrap";
+import { logo } from "../static";
 const AuthLayout = ({ img, formComponent, redirectComponent }) => {
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -13,6 +14,7 @@ const AuthLayout = ({ img, formComponent, redirectComponent }) => {
     textAlign: "center",
     color: theme.palette.text.secondary,
   }));
+
   return (
     // <Container fluid style={{ height: "100vh" }}>
     //   <Row className="p-1 my-0" style={{ height: "inherit" }}>
@@ -43,11 +45,12 @@ const AuthLayout = ({ img, formComponent, redirectComponent }) => {
             className="shadow "
           >
             <Stack className="h-100 px-3">
-              <Box component="div" sx={{ height: "5%", width: "100%" }}>
-                <Avatar
-                  sx={{ width: 100, height: 100 }}
-                  src="https://image.freepik.com/free-vector/access-control-system-illustration_335657-4640.jpg"
-                />
+              <Box
+                component="div"
+                sx={{ height: "5%", width: "100%" }}
+                className="px-3 mt-3"
+              >
+                <Image width={75} src={logo} />
               </Box>
 
               <Box

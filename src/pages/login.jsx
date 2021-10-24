@@ -23,9 +23,9 @@ import AuthLayout from "../layout/authLayout";
 import { FcGoogle } from "react-icons/fc";
 import { CgFacebook } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import { color } from "../static";
 
 const Login = () => {
-  const [num, setnum] = useState(1);
   const formWidth = {
     width: "50%",
     "@media (max-width: 426px)": {
@@ -103,14 +103,16 @@ const Login = () => {
             <FormGroup>
               <FormControlLabel
                 control={<Checkbox defaultChecked />}
-                label="Remember me"
-              />
+                label={<Typography variant="caption">Remember me</Typography>}
+              ></FormControlLabel>
             </FormGroup>
           </Grid>
           <Grid md={6}>
             <Typography
+              variant="caption"
               align="right"
               className="h-100 d-flex align-items-center justify-content-end"
+              color={color.default}
             >
               Forgot Password?
             </Typography>
@@ -120,7 +122,7 @@ const Login = () => {
 
       <Button
         variant="contained"
-        sx={{ textTransform: "none" }}
+        sx={{ textTransform: "none", backgroundColor: color.default }}
         className="py-2"
       >
         <Typography>Login</Typography>
@@ -129,9 +131,18 @@ const Login = () => {
   );
 
   const redirectComponent = (
-    <Typography align="right">
-      Don't have an account?{" "}
-      <Link href="/register" underline="none" color="rgb(0, 171, 85)">
+    <Typography
+      align="right"
+      variant="caption"
+      className="d-flex justify-content-end"
+    >
+      Don't have an account? {"  "}
+      <Link
+        href="/register"
+        underline="none"
+        fontWeight="bold"
+        color={color.default}
+      >
         Get Started
       </Link>
     </Typography>
