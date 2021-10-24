@@ -1,13 +1,6 @@
 import React from "react";
 // import { Col, Container, Row } from "reactstrap";
-import {
-  CardContent,
-  Grid,
-  Typography,
-  Card,
-  Container,
-  TextField,
-} from "@mui/material";
+import { Grid, Card } from "@mui/material";
 import { Item } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -52,10 +45,11 @@ const AuthLayout = ({ img, formComponent, redirectComponent }) => {
           </Card>
         </Grid>
         <Grid item xs={12} md={8}>
-          <Box sx={{}} component="form">
-            <Grid container>
-              <Grid></Grid>
-            </Grid>
+          <Box
+            component="form"
+            className="h-100 w-100 d-flex align-items-center justify-content-center"
+          >
+            {formComponent}
           </Box>
         </Grid>
       </Grid>
