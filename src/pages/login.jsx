@@ -15,16 +15,19 @@ import {
   Checkbox,
   Button,
   Divider,
+  IconButton,
+  InputAdornment,
+  OutlinedInput,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
-
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import AuthLayout from "../layout/authLayout";
 import { FcGoogle } from "react-icons/fc";
 import { CgFacebook } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
-import { color } from "../static";
-
+import { color, image } from "../static";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 const Login = () => {
   const formWidth = {
     width: "50%",
@@ -32,9 +35,25 @@ const Login = () => {
       width: "80%",
     },
   };
+  const { register, handleSubmit, errors, watch } = useForm();
+  const handleLogin = (data) => {
+    alert(`email: ${data.email}  pwd: ${data.password} `);
+  };
 
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
   const formComponent = (
-    <Stack spacing={2} sx={formWidth}>
+    <Stack
+      spacing={2}
+      sx={formWidth}
+      component="form"
+      onSubmit={handleSubmit(handleLogin)}
+    >
       <Typography variant="h5" component="div" sx={{ fontWeight: 700 }}>
         Sign in to Ourportfolio
       </Typography>
@@ -87,22 +106,44 @@ const Login = () => {
         id="outlined-basic"
         label="Email"
         variant="outlined"
+        type="email"
         sx={{ width: "100%" }}
+        {...register("email", { required: true })}
       />
 
-      <TextField
-        id="outlined-basic"
-        label="Password"
-        variant="outlined"
-        sx={{ width: "100%" }}
-      />
+      <FormControl sx={{ width: "100%" }} variant="outlined">
+        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+        <OutlinedInput
+          id="outlined-adornment-password"
+          type={showPassword ? "text" : "password"}
+          {...register("password", { required: true })}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+                edge="end"
+              >
+                {showPassword ? <MdVisibility /> : <MdVisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+          }
+          label="Password"
+        />
+      </FormControl>
 
       <Box container>
         <Grid container>
           <Grid md={6}>
             <FormGroup>
               <FormControlLabel
-                control={<Checkbox defaultChecked />}
+                control={
+                  <Checkbox
+                    defaultChecked
+                    sx={{ color: `${color.default} !important` }}
+                  />
+                }
                 label={<Typography variant="caption">Remember me</Typography>}
               ></FormControlLabel>
             </FormGroup>
@@ -112,9 +153,15 @@ const Login = () => {
               variant="caption"
               align="right"
               className="h-100 d-flex align-items-center justify-content-end"
-              color={color.default}
             >
-              Forgot Password?
+              <Link
+                href="/register"
+                underline="none"
+                color={color.default}
+                fontWeight="bold"
+              >
+                Forgot Password?
+              </Link>
             </Typography>
           </Grid>
         </Grid>
@@ -124,6 +171,7 @@ const Login = () => {
         variant="contained"
         sx={{ textTransform: "none", backgroundColor: color.default }}
         className="py-2"
+        type="submit"
       >
         <Typography>Login</Typography>
       </Button>
@@ -151,6 +199,10 @@ const Login = () => {
     <AuthLayout
       formComponent={formComponent}
       redirectComponent={redirectComponent}
+      authCardText={
+        "Hi, Welcome back >> Manage your portfolio more effectively (for register)"
+      }
+      authCardImg={image.register}
     />
   );
 };
