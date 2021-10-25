@@ -19,20 +19,6 @@ const Register = () => {
 
   const [count, setCount] = useState(1);
 
-  // const formComponent = () => {
-  //   switch (count) {
-  //     case 1:
-  //       return <Contact />
-  //       break;
-
-  //     case 2:
-  //       return <Personal />
-  //       break;
-  //     default:
-  //       return ''
-  //   }
-  // }
-
   count < 1 && setCount(1);
   count > 2 && setCount(2);
 
@@ -50,7 +36,10 @@ const Register = () => {
   return (
     <>
       <CssBaseline />
-      <AuthLayout formComponent={returnComponent} />
+      <AuthLayout
+        formComponent={returnComponent}
+        authCardText={"Manage your portfolio more effectively"}
+      />
     </>
   );
 };
