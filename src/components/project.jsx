@@ -25,10 +25,10 @@ const Project = () => {
   }
 
   function handleSubmit() {
-    setproject((a) => [...a, { title, description }]);
+    setproject((preData) => [...preData, { title, description }]);
   }
 
-  console.log(project);
+  //   console.log(project);
   return (
     <>
       <CssBaseline />

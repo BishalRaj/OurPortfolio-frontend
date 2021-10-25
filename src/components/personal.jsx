@@ -23,6 +23,11 @@ const Register = () => {
     setShowPassword(!showPassword);
   };
 
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [username, setUserName] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
   return (
     <>
       <CssBaseline />
@@ -46,6 +51,7 @@ const Register = () => {
               label="First Name"
               variant="outlined"
               color="secondary"
+              onChange={(e) => setFirstName(e.target.value)}
               required
               fullWidth
             />
@@ -54,6 +60,7 @@ const Register = () => {
               label="Last Name"
               variant="outlined"
               color="secondary"
+              onChange={(e) => setLastName(e.target.value)}
               required
               fullWidth
             />
@@ -62,6 +69,7 @@ const Register = () => {
               label="Username"
               variant="outlined"
               color="secondary"
+              onChange={(e) => setUserName(e.target.value)}
               required
               fullWidth
             />
@@ -71,6 +79,7 @@ const Register = () => {
               variant="outlined"
               type="password"
               color="secondary"
+              onChange={(e) => setPassword(e.target.value)}
               required
               fullWidth
             />

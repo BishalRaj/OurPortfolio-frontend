@@ -21,7 +21,7 @@ const Register = () => {
   const returnComponent = (
     <>
       <ArrowBackIosNewIcon
-        onClick={() => setCount(count - 1)}
+        onClick={() => setCount((count) => count - 1)}
         color="secondary"
       />
       {count === 1 && <Personal />}
@@ -30,7 +30,7 @@ const Register = () => {
       {count === 4 && <Skills />}
 
       <ArrowForwardIosIcon
-        onClick={() => setCount(count + 1)}
+        onClick={() => setCount((count) => count + 1)}
         color="secondary"
       />
       {/* <h6>{count} of 2</h6> */}
