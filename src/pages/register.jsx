@@ -14,6 +14,7 @@ import AuthLayout from "../layout/authLayout";
 import { useState } from "react";
 import Contact from "../components/contact";
 import Personal from "../components/personal";
+import Project from "../components/project";
 const Register = () => {
   const classes = useStyles();
 
@@ -33,8 +34,8 @@ const Register = () => {
   //   }
   // }
 
-  count < 1 && setCount(1);
-  count > 2 && setCount(2);
+  // count < 1 && setCount(1);
+  // count > 2 && setCount(2);
 
   const returnComponent = (
     <>
@@ -42,6 +43,7 @@ const Register = () => {
 
       {count === 1 && <Personal />}
       {count === 2 && <Contact />}
+      {count === 3 && <Project />}
       <Button onClick={() => setCount(count + 1)}>Next</Button>
       {/* <h6>{count} of 2</h6> */}
     </>
