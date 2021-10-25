@@ -5,18 +5,18 @@ import {
   Container,
   Button,
   TextField,
-  Stack,
+  Slider,
 } from "@mui/material/";
 
 import useStyles from "../styles";
 
-const Contact = () => {
+const Skills = () => {
   const classes = useStyles();
   return (
     <>
       {" "}
       <CssBaseline />
-      <main>
+      <main className="classes.project">
         <div className={classes.title}>
           <Container maxWidth="sm">
             <Typography
@@ -25,7 +25,7 @@ const Contact = () => {
               color="textPrimary"
               gutterBottom
             >
-              Contact Detail
+              Add Your Skills
             </Typography>
           </Container>
         </div>
@@ -33,29 +33,19 @@ const Contact = () => {
           <form noValidate autoComplete="off">
             <TextField
               className={classes.field}
-              label="Email"
+              label="Title"
               variant="outlined"
               color="secondary"
               required
               fullWidth
             />
-            <TextField
-              className={classes.fields}
-              label="Address"
-              variant="outlined"
-              color="secondary"
-              required
-              fullWidth
+            <Slider
+              size="medium"
+              defaultValue={70}
+              aria-label="Small"
+              valueLabelDisplay="auto"
             />
-            <TextField
-              className={classes.fields}
-              label="Phone No."
-              variant="outlined"
-              type="number"
-              color="secondary"
-              required
-              fullWidth
-            />
+            <Button>add</Button>
           </form>
         </Container>
       </main>
@@ -63,4 +53,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Skills;

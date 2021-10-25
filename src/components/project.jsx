@@ -1,22 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+
 import {
   CssBaseline,
   Typography,
   Container,
   Button,
   TextField,
-  Stack,
 } from "@mui/material/";
 
 import useStyles from "../styles";
 
-const Contact = () => {
+const Project = () => {
   const classes = useStyles();
+
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
+  const [project, setproject] = useState([]);
+
+  function titleChange(e) {
+    console.log(e.target.value);
+  }
+  function descriptionChange(e) {
+    console.log(e.target.value);
+  }
+
+  function handleSubmit() {
+    setproject((preData) => [...preData, { title, description }]);
+  }
+
+  //   console.log(project);
   return (
     <>
-      {" "}
       <CssBaseline />
-      <main>
+      <main className="classes.project">
         <div className={classes.title}>
           <Container maxWidth="sm">
             <Typography
@@ -25,7 +41,7 @@ const Contact = () => {
               color="textPrimary"
               gutterBottom
             >
-              Contact Detail
+              Project Detail
             </Typography>
           </Container>
         </div>
@@ -33,7 +49,8 @@ const Contact = () => {
           <form noValidate autoComplete="off">
             <TextField
               className={classes.field}
-              label="Email"
+              onChange={(e) => setTitle(e.target.value)}
+              label="Title"
               variant="outlined"
               color="secondary"
               required
@@ -41,7 +58,8 @@ const Contact = () => {
             />
             <TextField
               className={classes.fields}
-              label="Address"
+              onChange={(e) => setDescription(e.target.value)}
+              label="Project Description"
               variant="outlined"
               color="secondary"
               required
@@ -49,18 +67,30 @@ const Contact = () => {
             />
             <TextField
               className={classes.fields}
-              label="Phone No."
+              onChange={(e) => setDescription(e.target.value)}
+              label="Image"
               variant="outlined"
-              type="number"
               color="secondary"
+              type="file"
               required
               fullWidth
             />
+
+            <Button onClick={handleSubmit}>add</Button>
           </form>
+          {project.map((item, key) => {
+            return (
+              <>
+                <p key={key * 1 - 5 * 8}>
+                  {item.title}, {item.description}
+                </p>
+              </>
+            );
+          })}
         </Container>
       </main>
     </>
   );
 };
 
-export default Contact;
+export default Project;
