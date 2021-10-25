@@ -2,58 +2,49 @@ import React from "react";
 import { CssBaseline, Typography, Container, Button, TextField, Stack } from '@mui/material/';
 
 import useStyles from "../styles";
+import AuthLayout from '../layout/authLayout'
 
-
+import { useState } from "react";
+import Contact from "../layouts/contact";
+import Personal from "../layouts/personal";
 const Register = () => {
 
   const classes = useStyles();
 
+  const [count, setCount] = useState(1)
+
+  // const formComponent = () => {
+  //   switch (count) {
+  //     case 1:
+  //       return <Contact />
+  //       break;
+
+  //     case 2:
+  //       return <Personal />
+  //       break;
+  //     default:
+  //       return ''
+  //   }
+  // }
+
+  count < 1 && setCount(1)
+  count > 2 && setCount(2)
+
+  const returnComponent = <>
+    <Button onClick={() => setCount(count - 1)}>Pre</Button>
+
+
+    {count === 1 && <Personal />}
+    {count === 2 && <Contact />}
+    <Button onClick={() => setCount(count + 1)} >Next</Button>
+    {/* <h6>{count} of 2</h6> */}
+  </>
+
+
   return (
     <>
       <CssBaseline />
-      <main>
-        <div className={classes.title}>
-          <Container maxWidth="sm">
-            <Typography variant="h3" align="center" color="textPrimary" gutterBottom>
-              Personal Detail
-            </Typography>
-          </Container>
-        </div>
-        <Container maxWidth="sm"  >
-          <form noValidate autoComplete="off" >
-            <TextField className={classes.field} label="First Name" variant="outlined" color="secondary" required fullWidth />
-            <TextField className={classes.fields} label="Last Name" variant="outlined" color="secondary" required fullWidth />
-            <TextField className={classes.fields} label="Username" variant="outlined" color="secondary" required fullWidth />
-            <TextField className={classes.fields} label="Password" variant="outlined" type="password" color="secondary" required fullWidth />
-            <TextField className={classes.fields} label="Confirm Password" type="password" variant="outlined" color="secondary" required fullWidth />
-
-            <Stack spacing={2} direction="row" >
-              <Button variant="outlined" color="secondary">Next</Button>
-            </Stack>
-          </form>
-        </Container>
-        <div className={classes.title}>
-          <Container maxWidth="sm">
-            <Typography variant="h3" align="center" color="textPrimary" gutterBottom>
-              Contact Detail
-            </Typography>
-          </Container>
-        </div>
-        <Container maxWidth="sm"  >
-          <form noValidate autoComplete="off" >
-            <TextField className={classes.field} label="Email" variant="outlined" color="secondary" required fullWidth />
-            <TextField className={classes.field} label="Address" variant="outlined" color="secondary" required fullWidth />
-            <TextField className={classes.fields} label="Phone No." variant="outlined" type="number" color="secondary" required fullWidth />
-
-
-            <Stack spacing={2} direction="row" >
-              <Button variant="outlined" color="secondary">Previous</Button>
-              <Button variant="outlined" color="secondary">Next</Button>
-            </Stack>
-          </form>
-        </Container>
-
-      </main>
+      <AuthLayout formComponent={returnComponent} />
     </>
   )
 };
