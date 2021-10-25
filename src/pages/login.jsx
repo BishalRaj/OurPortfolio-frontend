@@ -195,9 +195,7 @@ const Login = () => {
     <AuthLayout
       formComponent={formComponent}
       redirectComponent={redirectComponent}
-      authCardText={
-        "Hi, Welcome back >> Manage your portfolio more effectively (for register)"
-      }
+      authCardText={"Hi, Welcome back"}
       authCardImg={image.register}
     />
   );

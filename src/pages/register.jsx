@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  CssBaseline,
-  Typography,
-  Container,
-  Button,
-  TextField,
-  Stack,
-} from "@mui/material/";
-
+import { CssBaseline, Button, Icons } from "@mui/material/";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import useStyles from "../styles";
 import AuthLayout from "../layout/authLayout";
 
@@ -15,36 +9,30 @@ import { useState } from "react";
 import Contact from "../components/contact";
 import Personal from "../components/personal";
 import Project from "../components/project";
+import Skills from "../components/skills";
 const Register = () => {
   const classes = useStyles();
 
   const [count, setCount] = useState(1);
-
-  // const formComponent = () => {
-  //   switch (count) {
-  //     case 1:
-  //       return <Contact />
-  //       break;
-
-  //     case 2:
-  //       return <Personal />
-  //       break;
-  //     default:
-  //       return ''
-  //   }
-  // }
 
   // count < 1 && setCount(1);
   // count > 2 && setCount(2);
 
   const returnComponent = (
     <>
-      <Button onClick={() => setCount(count - 1)}>Pre</Button>
-
+      <ArrowBackIosNewIcon
+        onClick={() => setCount(count - 1)}
+        color="secondary"
+      />
       {count === 1 && <Personal />}
       {count === 2 && <Contact />}
       {count === 3 && <Project />}
-      <Button onClick={() => setCount(count + 1)}>Next</Button>
+      {count === 4 && <Skills />}
+
+      <ArrowForwardIosIcon
+        onClick={() => setCount(count + 1)}
+        color="secondary"
+      />
       {/* <h6>{count} of 2</h6> */}
     </>
   );
@@ -52,7 +40,10 @@ const Register = () => {
   return (
     <>
       <CssBaseline />
-      <AuthLayout formComponent={returnComponent} />
+      <AuthLayout
+        formComponent={returnComponent}
+        authCardText={"Manage your portfolio more effectively"}
+      />
     </>
   );
 };
