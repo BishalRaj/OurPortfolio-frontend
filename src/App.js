@@ -28,6 +28,13 @@ function App() {
             exact={true}
             component={RegisterPage}
           />
+          <ProtectedRoute
+            isLoggedIn={true}
+            title={"Register"}
+            path={"/admin"}
+            exact={true}
+            component={AdminPage}
+          />
         </Switch>
       </Fragment>
     </BrowserRouter>
