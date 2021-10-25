@@ -1,10 +1,7 @@
 import React from "react";
 // import { Col, Container, Row } from "reactstrap";
 import { Grid, Card, Avatar, Typography } from "@mui/material";
-import { Item } from "@mui/material";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import { Image, Stack } from "react-bootstrap";
 import { image } from "../static";
 const AuthLayout = ({
@@ -14,12 +11,6 @@ const AuthLayout = ({
   authCardText,
   authCardImg,
 }) => {
-  const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
   const cardWidth = {
     width: "92%",
     "@media (max-width: 769px)": {

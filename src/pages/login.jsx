@@ -1,13 +1,9 @@
 import {
   FormControl,
-  FormHelperText,
   InputLabel,
   Link,
-  CardContent,
   Grid,
   Typography,
-  Card,
-  Container,
   TextField,
   Stack,
   FormGroup,
@@ -35,7 +31,7 @@ const Login = () => {
       width: "80%",
     },
   };
-  const { register, handleSubmit, errors, watch } = useForm();
+  const { register, handleSubmit } = useForm();
   const handleLogin = (data) => {
     alert(`email: ${data.email}  pwd: ${data.password} `);
   };
