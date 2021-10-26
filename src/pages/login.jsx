@@ -174,29 +174,17 @@ const Login = () => {
     </Stack>
   );
 
-  const redirectComponent = (
-    <Typography
-      align="right"
-      variant="caption"
-      className="d-flex justify-content-end"
-    >
-      Don't have an account? {"  "}
-      <Link
-        href="/register"
-        underline="none"
-        fontWeight="bold"
-        color={color.default}
-      >
-        Get Started
-      </Link>
-    </Typography>
-  );
+  const redirectComponent = {
+    text: "Don't have an account?",
+    redirectText: "Get started",
+    link: "/register",
+  };
   return (
     <AuthLayout
       formComponent={formComponent}
       redirectComponent={redirectComponent}
       authCardText={"Hi, Welcome back"}
-      authCardImg={image.register}
+      authCardImg={image.login}
     />
   );
 };

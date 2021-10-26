@@ -1,11 +1,10 @@
-import React from "react";
-// import { Col, Container, Row } from "reactstrap";
-import { Grid, Card, Avatar, Typography } from "@mui/material";
+import { Avatar, Card, Grid, Link, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
+import React from "react";
 import { Image, Stack } from "react-bootstrap";
-import { image } from "../static";
+import { color, image } from "../static";
+
 const AuthLayout = ({
-  img,
   formComponent,
   redirectComponent,
   authCardText,
@@ -68,7 +67,21 @@ const AuthLayout = ({
 
         <Grid item xs={12} md={8}>
           <Box component="div" className=" w-100 " sx={{ height: "4%" }}>
-            {redirectComponent}
+            <Typography
+              align="right"
+              variant="caption"
+              className="d-flex justify-content-end"
+            >
+              {redirectComponent.text} {"  "}
+              <Link
+                href={redirectComponent.link}
+                underline="none"
+                fontWeight="bold"
+                color={color.default}
+              >
+                {redirectComponent.redirectText}
+              </Link>
+            </Typography>
           </Box>
           <Box
             className=" w-100 d-flex align-items-center justify-content-center"
