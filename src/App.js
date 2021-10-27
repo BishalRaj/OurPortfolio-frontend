@@ -3,6 +3,7 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import AdminPage from "./pages/admin";
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
+import HomePage from "./pages/home";
 import ProtectedRoute from "./utils/protectedRoute";
 function App() {
   const isLoggedIn = () => {
@@ -33,6 +34,13 @@ function App() {
             path={"/admin"}
             exact={true}
             component={AdminPage}
+          />
+          <ProtectedRoute
+            isLoggedIn={true}
+            title={"Home"}
+            path={"/home"}
+            exact={true}
+            component={HomePage}
           />
         </Switch>
       </Fragment>
