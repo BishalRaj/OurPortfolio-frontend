@@ -9,10 +9,8 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 import { MdVisibility, MdVisibilityOff } from "react-icons/md";
-const Personal = () => {
-  const { register } = useForm();
+const Personal = ({ handleChange, data }) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -27,7 +25,9 @@ const Personal = () => {
         label="Full Name"
         variant="outlined"
         sx={{ width: "100%" }}
-        {...register("name", { required: true })}
+        onChange={handleChange}
+        defaultValue={data.name}
+        name="name"
       />{" "}
       <TextField
         id="outlined-basic"
@@ -35,7 +35,9 @@ const Personal = () => {
         variant="outlined"
         type="email"
         sx={{ width: "100%" }}
-        {...register("email", { required: true })}
+        onChange={handleChange}
+        defaultValue={data.email}
+        name="email"
       />
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <TextField
@@ -46,6 +48,9 @@ const Personal = () => {
           InputLabelProps={{
             shrink: true,
           }}
+          onChange={handleChange}
+          defaultValue={data.dob}
+          name="dob"
         />
         <TextField
           id="outlined-basic"
@@ -53,7 +58,9 @@ const Personal = () => {
           variant="outlined"
           type="number"
           sx={{ width: "49%" }}
-          {...register("contact", { required: true })}
+          onChange={handleChange}
+          defaultValue={data.contact}
+          name="contact"
         />
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -62,7 +69,9 @@ const Personal = () => {
           label="Address"
           variant="outlined"
           sx={{ width: "49%" }}
-          {...register("address", { required: true })}
+          onChange={handleChange}
+          defaultValue={data.address}
+          name="address"
         />{" "}
         <TextField
           id="outlined-basic"
@@ -70,7 +79,9 @@ const Personal = () => {
           type="number"
           variant="outlined"
           sx={{ width: "49%" }}
-          {...register("zip", { required: true })}
+          onChange={handleChange}
+          defaultValue={data.zip}
+          name="zip"
         />
       </Box>
       <FormControl sx={{ width: "100%" }} variant="outlined">
@@ -78,7 +89,9 @@ const Personal = () => {
         <OutlinedInput
           id="outlined-adornment-password"
           type={showPassword ? "text" : "password"}
-          {...register("password", { required: true })}
+          onChange={handleChange}
+          defaultValue={data.password}
+          name="password"
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -101,7 +114,9 @@ const Personal = () => {
         <OutlinedInput
           id="outlined-adornment-password"
           type={showPassword ? "text" : "password"}
-          {...register("confirmPassword", { required: true })}
+          onChange={handleChange}
+          defaultValue={data.confirmPassword}
+          name="confirmPassword"
           endAdornment={
             <InputAdornment position="end">
               <IconButton

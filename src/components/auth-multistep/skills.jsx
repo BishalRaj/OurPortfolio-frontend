@@ -10,6 +10,7 @@ import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
+import { v4 as uuidv4 } from "uuid";
 const Skills = ({ handleSkill, handleRemoveSkill, data }) => {
   const [item, setitem] = useState({ skill: "", percent: 50 });
   const Item = styled(Paper)(({ theme }) => ({
@@ -21,10 +22,13 @@ const Skills = ({ handleSkill, handleRemoveSkill, data }) => {
   }));
 
   const handleClick = () => {
-    handleSkill(item);
+    handleSkill({ ...item, id: uuidv4() + Math.random() });
   };
   const handleChange = (e) => {
-    setitem({ ...item, [e.target.name]: e.target.value });
+    setitem({
+      ...item,
+      [e.target.name]: e.target.value,
+    });
   };
   const handleRemove = (x) => {
     handleRemoveSkill(x);
@@ -69,7 +73,7 @@ const Skills = ({ handleSkill, handleRemoveSkill, data }) => {
             {x.skill}
 
             <CancelIcon
-              onClick={() => handleRemove(x.skill)}
+              onClick={() => handleRemove(x.id)}
               sx={{
                 marginLeft: "10px",
                 "&:hover": {

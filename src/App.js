@@ -1,10 +1,9 @@
 import { Fragment } from "react";
-import { Switch, BrowserRouter } from "react-router-dom";
-import ProtectedRoute from "./utils/protectedRoute";
+import { BrowserRouter, Switch } from "react-router-dom";
+import AdminPage from "./pages/admin";
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
-import HomePage from "./pages/home";
-import AdminPage from "./pages/admin";
+import ProtectedRoute from "./utils/protectedRoute";
 function App() {
   const isLoggedIn = () => {
     return false;
