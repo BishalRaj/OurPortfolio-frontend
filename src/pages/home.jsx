@@ -3,11 +3,20 @@ import {
   Typography,
   Box,
   Avatar,
+  Button,
+  IconButton,
   Stack,
+  Drawer,
   Divider,
   LinearProgress,
   CircularProgress,
 } from "@mui/material";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
+import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
+
 import useStyles from "../styles";
 
 // const drawerWidth = 240;
@@ -43,11 +52,13 @@ function Home() {
 
     <Box
       sx={{
+        display: "flex",
         width: "100%",
         height: "100%",
         backgroundColor: "#1e1e28",
       }}
     >
+      {/* -------------------------Sidebar-------------------- */}
       <Box
         className="shadow"
         sx={{
@@ -79,24 +90,53 @@ function Home() {
             text Here
           </Typography>
         </Box>
+
+        {/* <Box sx={{ height: 50 }}>
+          <Drawer className={classes.drawer} variant="permanent" anchor="right">
+            sdjhsdjfh
+          </Drawer>
+        </Box> */}
+
         <Box sx={{ backgroundColor: "#1e1e28", maxWidth: 300, padding: 2 }}>
-          <Stack direction="row" spacing={16}>
-            <Typography variant="subtitle1" color="white">
+          <Stack direction="row">
+            <Typography
+              variant="subtitle1"
+              color="white"
+              sx={{ flexGrow: "1" }}
+            >
               Residence
             </Typography>
             <Typography variant="subtitle1" color="white">
               Residence
             </Typography>
           </Stack>
-          <Stack direction="row" spacing={26.5}>
-            <Typography variant="subtitle1" color="white">
+          <Stack direction="row">
+            <Typography
+              variant="subtitle1"
+              color="white"
+              sx={{ flexGrow: "1" }}
+            >
               City
             </Typography>
             <Typography variant="subtitle1" color="white">
               City
             </Typography>
           </Stack>
-          <Divider className="mt-2" light={false} />
+          <Stack direction="row">
+            <Typography
+              variant="subtitle1"
+              color="white"
+              sx={{ flexGrow: "1" }}
+            >
+              Age
+            </Typography>
+            <Typography variant="subtitle1" color="white">
+              Age
+            </Typography>
+          </Stack>
+          <Divider className="mt-2" light={true} />
+
+          {/* --------------------Skills--------------------- */}
           <Typography variant="subtitle1" color="white" className="py-3">
             Skills
           </Typography>
@@ -128,17 +168,142 @@ function Home() {
             </Typography>
           </Box>
           <Divider className="mt-2" light={true} />
-          <Typography variant="subtitle1" color="white" className="py-3">
+
+          {/* --------------------Coding--------------------------- */}
+          <Typography variant="subtitle1" color="white" className="py-2">
             Coding
           </Typography>
           <Stack sx={{ width: "100%", color: "grey.500" }} spacing={2}>
-            <LinearProgress variant="determinate" value={20} />
-            <LinearProgress variant="determinate" value={5} />
-            <LinearProgress variant="determinate" value={80} />
-            <LinearProgress variant="determinate" value={45} />
+            <Stack direction="row" className="mt-0">
+              <Typography
+                variant="subtitle1"
+                color="white"
+                className="mt-2"
+                sx={{ flexGrow: "1" }}
+              >
+                Dart
+              </Typography>
+              <Typography variant="subtitle1" color="white" className="mt-2">
+                value
+              </Typography>
+            </Stack>
+            <LinearProgress variant="determinate" value={20} className="mt-1" />
+            <Stack direction="row" className="mt-0">
+              <Typography
+                variant="subtitle1"
+                color="white"
+                className="mt-2"
+                sx={{ flexGrow: "1" }}
+              >
+                Dart
+              </Typography>
+              <Typography variant="subtitle1" color="white" className="mt-2">
+                value
+              </Typography>
+            </Stack>
+            <LinearProgress variant="determinate" value={80} className="mt-1" />
+            <Stack direction="row" className="mt-0">
+              <Typography
+                variant="subtitle1"
+                color="white"
+                className="mt-2"
+                sx={{ flexGrow: "1" }}
+              >
+                Dart
+              </Typography>
+              <Typography variant="subtitle1" color="white" className="mt-2">
+                value
+              </Typography>
+            </Stack>
+            <LinearProgress variant="determinate" value={80} className="mt-1" />
+            <Stack direction="row" className="mt-0">
+              <Typography
+                variant="subtitle1"
+                color="white"
+                className="mt-2"
+                sx={{ flexGrow: "1" }}
+              >
+                Dart
+              </Typography>
+              <Typography variant="subtitle1" color="white" className="mt-2">
+                value
+              </Typography>
+            </Stack>
+            <LinearProgress variant="determinate" value={40} className="mt-1" />
+          </Stack>
+          <Divider className="mt-4" light={true} />
+
+          {/* ---------------------Knowledge---------------------- */}
+          <Typography variant="subtitle1" color="white" className="py-2">
+            Knowledge
+          </Typography>
+          <Stack direction="row" spacing={1}>
+            <CheckOutlinedIcon color="warning" />
+            <Typography variant="subtitle1" color="white">
+              Flutter,Dart
+            </Typography>
+          </Stack>
+          <Stack direction="row" spacing={1}>
+            <CheckOutlinedIcon color="warning" />
+            <Typography variant="subtitle1" color="white">
+              Html, Css, JS
+            </Typography>
+          </Stack>
+          <Stack direction="row" spacing={1}>
+            <CheckOutlinedIcon color="warning" />
+            <Typography variant="subtitle1" color="white">
+              FireBase Knowledge
+            </Typography>
+          </Stack>
+          <Stack direction="row" spacing={1}>
+            <CheckOutlinedIcon color="warning" />
+            <Typography variant="subtitle1" color="white">
+              GIT Knowledge
+            </Typography>
+          </Stack>
+          <Divider className="mt-3" light={true} />
+
+          <Stack alignItems="center" direction="column" className="mt-3">
+            <Button
+              variant="text"
+              color="warning"
+              endIcon={<CloudDownloadOutlinedIcon />}
+            >
+              Download CV
+            </Button>
+          </Stack>
+          <Box sx={{ height: 10 }}></Box>
+
+          {/* ----------------------Social Links------------------- */}
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <Stack
+              direction="row"
+              alignItems="center"
+              sx={{
+                height: 35,
+                width: "100%",
+                backgroundColor: "#24242e",
+                alignSelf: "center",
+                marginLeft: "0%",
+              }}
+            >
+              <IconButton size="large" sx={{ marginLeft: 7 }}>
+                <GitHubIcon sx={{ fontSize: 26 }} />
+              </IconButton>
+              <IconButton size="large">
+                <TwitterIcon sx={{ fontSize: 26 }} />
+              </IconButton>
+              <IconButton size="large">
+                <TwitterIcon sx={{ fontSize: 26 }} />
+              </IconButton>
+            </Stack>
           </Stack>
         </Box>
       </Box>
+      {/* ----- */}
+      <Typography variant="h1" color="white">
+        sdjfsdhjsdg
+      </Typography>
     </Box>
   );
 }
