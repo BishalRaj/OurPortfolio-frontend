@@ -14,6 +14,8 @@ import {
   Divider,
   LinearProgress,
   CircularProgress,
+  CardActions,
+  Grid,
 } from "@mui/material";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -326,28 +328,192 @@ function Home() {
           </Stack>
         </Box>
 
-        <Stack
-          direction="row"
-          spacing={12}
-          sx={{ margin: 2, marginLeft: 2, marginRight: 2 }}
+        <Box
+          sx={{
+            width: "100%",
+            height: 45,
+            paddingLeft: 10,
+            marginTop: 2,
+          }}
         >
-          <Typography variant="h6" color="white" sx={{ marginLeft: 28 }}>
-            Website
-          </Typography>
-          <Typography variant="h6" color="white">
-            Mobile Application
-          </Typography>
-          <Typography variant="h6" color="white">
-            GitHub Project
-          </Typography>
-          <Typography variant="h6" color="white">
-            Clients
-          </Typography>
-        </Stack>
+          <Stack direction="row" spacing={18.5}>
+            <Stack direction="row" spacing={1}>
+              <Typography variant="h6" color="#ffc107">
+                10+
+              </Typography>
+              <Typography variant="h6" color="white">
+                Websites
+              </Typography>
+            </Stack>
+            <Stack direction="row" spacing={1}>
+              <Typography variant="h6" color="#ffc107">
+                20+
+              </Typography>
+              <Typography variant="h6" color="white">
+                Mobile Application
+              </Typography>
+            </Stack>
+            <Stack direction="row" spacing={1}>
+              <Typography variant="h6" color="#ffc107">
+                30+
+              </Typography>
+              <Typography variant="h6" color="white">
+                GitHub Projects
+              </Typography>
+            </Stack>
+            <Stack direction="row" spacing={1}>
+              <Typography variant="h6" color="#ffc107">
+                30+
+              </Typography>
+              <Typography variant="h6" color="white">
+                Clients
+              </Typography>
+            </Stack>
+          </Stack>
+        </Box>
 
-        <Typography variant="h1" color="white">
-          sdjfsdhjsdg
-        </Typography>
+        <Box
+          sx={{
+            width: "100%",
+            paddingLeft: 10,
+            paddingRight: 5.5,
+          }}
+        >
+          <Typography variant="h6" color="white">
+            My Projects
+          </Typography>
+          <Box sx={{ height: 8 }}></Box>
+
+          <Box
+            sx={{
+              width: "100%",
+              flexGrow: 1,
+            }}
+          >
+            <Grid container spacing={1}>
+              <Grid item sm={6} lg={4} xs={12}>
+                <Card sx={{ maxWidth: 310, px: 1 }}>
+                  <CardContent>
+                    <Typography
+                      sx={{ fontSize: 14 }}
+                      color="black"
+                      gutterBottom
+                    >
+                      Responsive Admin Panel and Dashboard
+                    </Typography>
+                    <Typography>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries
+                    </Typography>
+                    <CardActions sx={{ padding: 0 }}>
+                      <Button size="small">Learn More</Button>
+                    </CardActions>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item sm={6} lg={4} xs={12}>
+                <Card sx={{ maxWidth: 310, px: 1 }}>
+                  <CardContent>
+                    <Typography
+                      sx={{ fontSize: 14 }}
+                      color="black"
+                      gutterBottom
+                    >
+                      Responsive Admin Panel and Dashboard
+                    </Typography>
+                    <Typography>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries
+                    </Typography>
+                    <CardActions sx={{ padding: 0 }}>
+                      <Button size="small">Learn More</Button>
+                    </CardActions>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item sm={6} lg={4} xs={12}>
+                <Card sx={{ maxWidth: 310, px: 1 }}>
+                  <CardContent>
+                    <Typography
+                      sx={{ fontSize: 14 }}
+                      color="black"
+                      gutterBottom
+                    >
+                      Responsive Admin Panel and Dashboard
+                    </Typography>
+                    <Typography>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries
+                    </Typography>
+                    <CardActions sx={{ padding: 0 }}>
+                      <Button size="small">Learn More</Button>
+                    </CardActions>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item sm={6} lg={4} xs={12}>
+                <Card sx={{ maxWidth: 310, px: 1 }}>
+                  <CardContent>
+                    <Typography
+                      sx={{ fontSize: 14 }}
+                      color="black"
+                      gutterBottom
+                    >
+                      Responsive Admin Panel and Dashboard
+                    </Typography>
+                    <Typography>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries
+                    </Typography>
+                    <CardActions sx={{ padding: 0 }}>
+                      <Button size="small">Learn More</Button>
+                    </CardActions>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item sm={6} lg={4} xs={12}>
+                <Card sx={{ maxWidth: 310, px: 1 }}>
+                  <CardContent>
+                    <Typography
+                      sx={{ fontSize: 14 }}
+                      color="black"
+                      gutterBottom
+                    >
+                      Responsive Admin Panel and Dashboard
+                    </Typography>
+                    <Typography>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries
+                    </Typography>
+                    <CardActions sx={{ padding: 0 }}>
+                      <Button size="small">Learn More</Button>
+                    </CardActions>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
