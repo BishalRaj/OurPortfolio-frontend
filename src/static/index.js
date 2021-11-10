@@ -1,4 +1,6 @@
-import { AiFillDashboard } from "react-icons/ai";
+import { AiFillProject } from "react-icons/ai";
+import { FaChartPie, FaUsers } from "react-icons/fa";
+import { MdOutlineWaterfallChart } from "react-icons/md";
 
 export const color = {
   default: "#00ab55",
@@ -14,8 +16,8 @@ export const image = {
 };
 
 export const nav = [
-  { item: "Dashboard", icon: <AiFillDashboard /> },
-  { item: "About", icon: <AiFillDashboard /> },
-  { item: "Projects", icon: <AiFillDashboard /> },
-  { item: "Skills", icon: <AiFillDashboard /> },
+  { item: "Dashboard", icon: <FaChartPie /> },
+  { item: "About", icon: <FaUsers /> },
+  { item: "Projects", icon: <AiFillProject /> },
+  { item: "Skills", icon: <MdOutlineWaterfallChart /> },
 ];

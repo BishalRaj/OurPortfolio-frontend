@@ -26,6 +26,10 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const getStyle = (item) => {
+    const style = item === active ? "#00AB55" : "#808080";
+    return style;
+  };
 
   const drawer = (
     <div>
@@ -33,22 +37,19 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
         {nav.map((text, index) => (
-          <ListItem button key={text.item} onClick={() => setActive(text.item)}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+          <ListItem
+            button
+            key={text.item + index * Math.random}
+            onClick={() => setActive(text.item)}
+            sx={{
+              background: text.item == active && "rgba(0,171,85,0.1)",
+              color: getStyle(text.item),
+            }}
+          >
+            <ListItemIcon sx={{ color: getStyle(text.item) }}>
+              {text.icon}
             </ListItemIcon>
             <ListItemText primary={text.item} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
           </ListItem>
         ))}
       </List>
@@ -60,12 +61,13 @@ function ResponsiveDrawer(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: "rgba(255,255,255,0.5)",
+          color: "rgb(0,171,85)",
         }}
       >
         <Toolbar>
@@ -88,7 +90,6 @@ function ResponsiveDrawer(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"
