@@ -7,6 +7,10 @@ import {
   IconButton,
   Stack,
   Drawer,
+  Card,
+  CardMedia,
+  CardActionArea,
+  CardContent,
   Divider,
   LinearProgress,
   CircularProgress,
@@ -18,6 +22,7 @@ import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 
 import useStyles from "../styles";
+import { Container } from "react-bootstrap";
 
 // const drawerWidth = 240;
 // const useStyles = makeStyles({
@@ -301,9 +306,49 @@ function Home() {
         </Box>
       </Box>
       {/* ----- */}
-      <Typography variant="h1" color="white">
-        sdjfsdhjsdg
-      </Typography>
+
+      <Box>
+        <Box
+          sx={{
+            width: 1000,
+            height: 350,
+            backgroundColor: "#242430",
+            marginLeft: 10,
+          }}
+        >
+          <Stack direction="column" alignItems="center">
+            <Avatar
+              sx={{ width: 1000, height: 350 }}
+              variant="square"
+              alt="Cindy Baker"
+              src="https://free4kwallpapers.com/uploads/wallpaper/minimal-dark-coding-wallpaper-1024x768-wallpaper.jpg"
+            />
+          </Stack>
+        </Box>
+
+        <Stack
+          direction="row"
+          spacing={12}
+          sx={{ margin: 2, marginLeft: 2, marginRight: 2 }}
+        >
+          <Typography variant="h6" color="white" sx={{ marginLeft: 28 }}>
+            Website
+          </Typography>
+          <Typography variant="h6" color="white">
+            Mobile Application
+          </Typography>
+          <Typography variant="h6" color="white">
+            GitHub Project
+          </Typography>
+          <Typography variant="h6" color="white">
+            Clients
+          </Typography>
+        </Stack>
+
+        <Typography variant="h1" color="white">
+          sdjfsdhjsdg
+        </Typography>
+      </Box>
     </Box>
   );
 }
